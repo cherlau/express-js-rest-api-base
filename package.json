@@ -1,0 +1,25 @@
+{
+  "name": "express-rest-api-base",
+  "version": "2.0.0",
+  "description": "Base moderna para APIs REST com Express, Knex e MySQL",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "knex": "^3.1.0",
+    "mysql2": "^3.9.7",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
