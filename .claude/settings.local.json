@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm install *)"
+      "Bash(npm install *)",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\cherlau\\\\Desktop\\\\express-js-rest-api-base\" -Recurse -Force)",
+      "Bash(Select-Object -Property FullName, PSIsContainer)",
+      "Bash(Sort-Object FullName)",
+      "Bash(Format-Table -AutoSize)",
+      "Bash(dir /s \"c:\\\\Users\\\\cherlau\\\\Desktop\\\\express-js-rest-api-base\")",
+      "Bash(findstr /V \"node_modules\")"
     ]
   }
 }

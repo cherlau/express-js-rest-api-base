@@ -82,8 +82,11 @@ class AuthController {
         return res.status(401).json({ error: 'Refresh token expirado ou não reconhecido' })
       }
 
-      // Rotação: invalida o token usado e emite um novo par
-      await RefreshToken.deleteByToken(refreshToken)
+      // Rotação: invalida o token usado e emite um novo par. Limpeza oportunista de expirados.
+      await Promise.all([
+        RefreshToken.deleteByToken(refreshToken),
+        RefreshToken.deleteExpired(),
+      ])
 
       const payload = { id: decoded.id, email: decoded.email }
       const newAccessToken = generateAccessToken(payload)

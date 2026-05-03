@@ -7,7 +7,7 @@ const User = {
   findById: (id) => db(TABLE).select('id', 'name', 'email', 'created_at').where({ id }).first(),
   findByEmail: (email) => db(TABLE).where({ email }).first(),
   create: (data) => db(TABLE).insert(data),
-  update: (id, data) => db(TABLE).where({ id }).update(data),
+  update: (id, data) => db(TABLE).where({ id }).update({ ...data, updated_at: new Date() }),
   remove: (id) => db(TABLE).where({ id }).delete(),
 }
 
